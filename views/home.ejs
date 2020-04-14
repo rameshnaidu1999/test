@@ -7,14 +7,14 @@
           <div class="col-lg-3 col-xl-3 col-md-10">
             <div class="card mt-3 shadow mb-3 bg-white rounded border-primary" >
               <div class="card-img">
-                <img src="<%- items[i].image %>" alt="" style="height: 35vh !important; width: 100% !important;"/>
+                <img src="<%- items[i].image %>" alt="" style="height: 30vh !important; width: 100% !important;"/>
               </div>
               <div class="card-body">
                 <h3> <%- items[i].title %> </h3>
                 <h6> <%- items[i].info %> </h6>
-                  <button type="button" class="btn btn-outline-primary btn-block" id="add_cart_btn" 
-                  onclick= "addCartFunc()" >Add to Cart</button>
-                  <button href="users/buy"  class="btn btn-primary btn-block" >Buy Now</button>
+                  <a href="cart" 
+                    class="btn btn-outline-primary btn-block" >Add to Cart</a>
+                  <a href="buy"  class="btn btn-primary btn-block" >Buy Now</a>
               </div>
             </div>
           </div>
@@ -23,28 +23,9 @@
       </div>
     </div>
     
-    <script>
-      function addCartFunc() {
-    var addCart = document.getElementById("add_cart_btn");
-    addCart.on("click", function () {
-        $.ajax({
-        type: 'POST',
-        data: JSON.stringify(data),
-        contentType: 'application/json',
-        body:{product_id : 1},
-        url: 'http://localhost:3001/users/cart',
-        success: function(result) {
-            //  $('#champ').html(result)
-            console.log("sucess")
-        }
-      });
-
-    })
-
-};
-    </script>
-
     <%- include('./footer') %>
+
+<script src="javascripts/script.js"></script>
     
 
 
