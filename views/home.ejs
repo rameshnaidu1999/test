@@ -1,20 +1,23 @@
-<%- include('./header') %>
-
 <div class="continer-fluid">
       <div class="mx-3">
         <div class="row ">
           <% for(var i=0; i < items.length; i++) { %>
-          <div class="col-lg-3 col-xl-3 col-md-10">
-            <div class="card mt-3 shadow mb-3 bg-white rounded border-primary" >
+          <div class="col-lg-3 col-xl-3 col-md-10" >
+            <div class="card mt-3 rounded border-success"  >
               <div class="card-img">
                 <img src="<%- items[i].image %>" alt="" style="height: 30vh !important; width: 100% !important;"/>
               </div>
               <div class="card-body">
                 <h3> <%- items[i].title %> </h3>
-                <h6> <%- items[i].info %> </h6>
-                  <a href="cart" 
-                    class="btn btn-outline-primary btn-block" >Add to Cart</a>
-                  <a href="buy"  class="btn btn-primary btn-block" >Buy Now</a>
+                <h6> Amount: <%- items[i].amount %> / <%- items[i].info %> </h6>
+                <form method="post" action="/" >
+                  <input type="submit" name="put" value='put' onClick="return confirm('Are you sure you want to delete?')" />
+                  <input type="hidden" name="_method" value="PUT" />
+              </form>
+                <button href="buy"  onclick="Add_to_Cart()"
+                    class="btn btn-outline-success btn-block mt-2" > Add to Cart </button>
+                  <button href="buy"  
+                    class="btn btn-success btn-block mt-2"> Buy Now </button>
               </div>
             </div>
           </div>
@@ -23,9 +26,7 @@
       </div>
     </div>
     
-    <%- include('./footer') %>
-
-<script src="javascripts/script.js"></script>
+<script src="/javascript/script.js"></script>
     
 
 

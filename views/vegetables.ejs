@@ -1,0 +1,30 @@
+<div class="continer-fluid">
+    <div class="mx-3">
+      <div class="row ">
+        <% for(var i=0; i < items.length; i++) { %>
+        <div class="col-lg-3 col-xl-3 col-md-10">
+          <div class="card mt-3 rounded border-success product" >
+            <div class="card-img">
+              <img src="<%- items[i].image %>" alt="" style="height: 30vh !important; width: 100% !important;"/>
+            </div>
+            <div class="card-body">
+              <h3> <%- items[i].title %> </h3>
+              <h6> Amount: <%- items[i].amount %> / <%- items[i].info %> </h6>
+              <button href="buy"  
+                  class="btn btn-outline-success btn-block mt-2"> Add to Cart </button>
+                <button href="buy"  
+                  class="btn btn-success btn-block mt-2"> Buy Now </button>
+            </div>
+          </div>
+        </div>
+        <% } %> 
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  
+
+
